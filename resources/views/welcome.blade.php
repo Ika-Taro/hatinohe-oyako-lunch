@@ -8,6 +8,7 @@
     @client
     @tag('Index')
 </head>
+<body>
 <div id="app"></div>
 </body>
 </html>

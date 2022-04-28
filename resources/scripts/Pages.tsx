@@ -1,5 +1,6 @@
 import  React from "react";
 import { Link } from "react-router-dom";
+import 'tailwindcss/tailwind.css'
 
 export function Home() {
   return (
@@ -13,8 +14,19 @@ export function Home() {
 
 export function Blog() {
   return (
-  <div>
-    こんにちは
-  </div>
+    <>
+      <ul>
+        <li>shop-name</li>
+        <li>category</li>
+        <li>kind</li>
+        <li>children-chair</li>
+        <li>tatami</li>
+        <li>crib</li>
+      </ul>
+      <input type="text">
+      </input>
+      <input type="text">
+      </input>
+    </>
   )
 }
