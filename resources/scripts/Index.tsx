@@ -1,28 +1,14 @@
+import  React from 'react';
+import  ReactDom from 'react-dom';
+import {BrowserRouter} from "react-router-dom";
+import {App} from "./App"
 
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
-import {Route, BrowserRouter} from "react-router-dom"
-import {PageA} from "./PageA"
-import {PageB} from "./PageB"
+const Content = () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+)
 
-// ルーティングの実装
-const Index= () =>  {
-  return (
-    <BrowserRouter>
-          <Route exact path="/PageA">
-            <PageA />
-          </Route>
-          <Route path="/PageB">
-            <PageB />
-          </Route>
-    </BrowserRouter>
-  )
-}
-
-// ReactDom.render((
-//   <BrowserRouter>
-//     <Index />
-//   </BrowserRouter>
-//   ), document.getElementById('index'));
-
-ReactDom.render(<Index />, document.getElementById('index'));
+ReactDom.render((
+    <Content />
+  ), document.getElementById('app'))
