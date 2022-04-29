@@ -1,11 +1,14 @@
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
+import  React from 'react';
+import  ReactDom from 'react-dom';
+import {BrowserRouter} from "react-router-dom";
+import {App} from "./App"
 
-const Index = () => {
-  return (
-    <div>
-      環境構築終了！！
-    </div>
-  );
-}
-ReactDom.render(<Index />, document.getElementById('index'));
+const Content = () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+)
+
+ReactDom.render((
+    <Content />
+  ), document.getElementById('app'))
