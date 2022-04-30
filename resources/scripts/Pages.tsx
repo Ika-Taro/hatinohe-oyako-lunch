@@ -33,21 +33,33 @@ export function Blog() {
           console.log('通信に失敗しました');
       });
     }
+  
+  let rows: any[] = [];
 
+  blogs.map ((post: any) => 
+      rows.push({
+        shop_name: post.shop_name,
+        category: post.category,
+        kindness_rating: post.kindness_rating,
+        children_chair: post.children_chair,
+        tatami: post.tatami,
+        crib: post.crib,
+        parent_review: post.parent_review,
+        children_review: post.children_review,
+      })
+
+  )
   return (
     <>
-      <ul>
-        <li>shop-name</li>
-        <li>category</li>
-        <li>kind</li>
-        <li>children-chair</li>
-        <li>tatami</li>
-        <li>crib</li>
-      </ul>
-      <input type="text">
-      </input>
-      <input type="text">
-      </input>
+      {rows.map((row, index) => (
+        <div key={index}>
+          {Object.keys(row).map(function(key, i) {
+                    return(
+                        <div key={i}>{row[key]}</div>
+                    );
+                })}
+        </div>
+      ))}
     </>
   )
 }
