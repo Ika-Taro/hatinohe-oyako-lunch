@@ -12,3 +12,4 @@ const Content = () => (
 ReactDom.render((
     <Content />
   ), document.getElementById('app'))
+

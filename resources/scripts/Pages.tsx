@@ -1,6 +1,8 @@
-import  React from "react";
+import  React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import 'tailwindcss/tailwind.css'
+import axios from "axios";
+
 
 export function Home() {
   return (
@@ -13,6 +15,25 @@ export function Home() {
 }
 
 export function Blog() {
+
+  const [blogs, setBlogs] = useState([]);
+  
+  useEffect(() => {
+      getBlogsData();
+  },[])
+
+  const getBlogsData = () => {
+    axios
+      .get('/api/blogs')
+      .then(response => {
+          setBlogs(response.data);     //バックエンドから返ってきたデータでBlogsを更新する
+          console.log(response.data);//取得データ確認用のconsole.log()
+      })
+      .catch(() => {
+          console.log('通信に失敗しました');
+      });
+    }
+
   return (
     <>
       <ul>
