@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'api'], function(){
   Route::get('blogs', 'App\Http\Controllers\Api\BlogController@index');
+  Route::post('blogs/create', 'App\Http\Controllers\Api\BlogController@create'); //追記
 });
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();

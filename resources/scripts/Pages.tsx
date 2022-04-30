@@ -26,8 +26,8 @@ export function Blog() {
     axios
       .get('/api/blogs')
       .then(response => {
-          setBlogs(response.data);     //バックエンドから返ってきたデータでBlogsを更新する
-          console.log(response.data);//取得データ確認用のconsole.log()
+          setBlogs(response.data);
+          console.log(response.data);
       })
       .catch(() => {
           console.log('通信に失敗しました');
@@ -46,6 +46,9 @@ export function Blog() {
         crib: post.crib,
         parent_review: post.parent_review,
         children_review: post.children_review,
+        editBtn: <button>編集</button>,
+        deleteBtn: <button>削除</button>,
+
       })
 
   )
