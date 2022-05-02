@@ -101,7 +101,24 @@ export function Blog() {
         .catch(error => {
             console.log(error);
         });
-        
+  }
+
+  const deletePost = async (post: { id: any; }) => {
+    await axios
+        .post('/api/delete', {
+        id: post.id
+    })
+    // .then((res) => {
+    //     this.setState({
+    //         posts: res.posts
+    //     });  
+    // })
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 }
 
   let rows: any[] = [];
@@ -116,8 +133,8 @@ export function Blog() {
         crib: post.crib,
         parent_review: post.parent_review,
         children_review: post.children_review,
-        editBtn: <button>編集</button>,
-        deleteBtn: <button>削除</button>,
+        // editBtn: <a key={post.id} href={`/blog/edit/${post.id}`}>編集</a>,
+        deleteBtn: <a href="/blog" onClick={() => deletePost(post)}>削除</a>,
       })
   )
   return (
@@ -134,7 +151,6 @@ export function Blog() {
                     })}
             </div>
           ))}
-
     </>
   )
 }
