@@ -28,21 +28,23 @@ function GlobalNav () {
     if (!localStorage.getItem('auth_token')){
         AuthButtons = (
         <>
-            <nav className="flex flex-row-reverse  flex-wrap bg-teal-500 p-6">
+            <nav className="flex flex-row-reverse aline-center flex-wrap bg-teal-500">
                 <Link to="/register">
-                    <span className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Register</span>
+                    <span className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white m-4 ml-2">会員登録</span>
                 </Link>
                 <Link to="/login">
-                    <span className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</span>
+                    <span className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white my-4 ">ログイン</span>
                 </Link>
             </nav>
         </>
         );
     } else {
         AuthButtons = (
+        <nav className="flex flex-row-reverse  flex-wrap bg-teal-500 ">
             <div onClick={logoutSubmit}>
-                <span className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">ログアウト</span>
+                <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white m-4 ">ログアウト</button>
             </div>
+        </nav>
         );
     }
 

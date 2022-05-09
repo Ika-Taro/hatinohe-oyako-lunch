@@ -5,6 +5,9 @@ module.exports = {
 		'./resources/**/*.tsx',
 	],
 	theme: {
+		fontSize: {
+      'xs': '.6rem',
+    },
 		extend: {},
 	},
 	plugins: [],

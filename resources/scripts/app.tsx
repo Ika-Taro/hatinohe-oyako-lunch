@@ -5,7 +5,6 @@ import {
   Blog
 } from "./Pages";
 // import BlogEdit from "./BlogEdit"
-import GlobalNav from './GlobalNav';
 import Register from './Register';
 import Login from './Login';
 import axios from 'axios';
@@ -35,8 +34,7 @@ axios.interceptors.request.use(function(config){
 
 export function App() {
   return (
-    <div>
-      <GlobalNav />
+    <>
       <Routes>
           {/* <Route path="/" element={<GlobalNav />}/> */}
           {/* <Route path="/" element={<Home />}/> */}
@@ -45,6 +43,6 @@ export function App() {
           <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login />}/>
       </Routes>
-    </div>
+    </>
   );
   }
