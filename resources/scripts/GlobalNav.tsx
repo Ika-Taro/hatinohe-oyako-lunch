@@ -40,11 +40,16 @@ function GlobalNav () {
         );
     } else {
         AuthButtons = (
-        <nav className="flex flex-row-reverse  flex-wrap bg-teal-500 ">
-            <div onClick={logoutSubmit}>
-                <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white m-4 ">ログアウト</button>
-            </div>
-        </nav>
+        <>
+            <nav className="flex flex-row-reverse  flex-wrap bg-teal-500 ">
+                <div onClick={logoutSubmit}>
+                    <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white m-4 ">ログアウト</button>
+                </div>
+                <Link to="/">
+                    <span className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white my-4 ">投稿</span>
+                </Link>
+            </nav>
+        </>
         );
     }
 

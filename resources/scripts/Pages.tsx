@@ -50,7 +50,6 @@ export function Blog() {
     }
     
     const inputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      e.persist();
       const target = e.target;
       const name = target.name;
       setFormData(() => {
@@ -81,7 +80,8 @@ export function Blog() {
 
   const createBlogs: any  = () => {
     axios
-        .post('/api/blogs/create' ,formData)
+        .post('/api/blogs/create' 
+          ,formData)
         // ,{
         //     shop_name: formData.shop_name,
         //     shop_category: formData.shop_category,
@@ -92,11 +92,11 @@ export function Blog() {
         //     parent_review: formData.parent_review,
         //     children_review: formData.children_review
         // })
-        // .then((res) => {
-        //     const tempPosts: any= blogs;
-        //     tempPosts.push(res.data);
-        //     setBlogs(tempPosts);
-        // })
+        .then((res) => {
+            const tempPosts: any= blogs;
+            tempPosts.push(res.data);
+            setBlogs(tempPosts);
+        })
         .then(function (response) {
           console.log(response);
         })
@@ -154,11 +154,11 @@ export function Blog() {
                   <div className="rounded overflow-hidden shadow-lg">
                     <div className="flex justify-center text-xl font-bold">{row.shop_name}</div>
                     <div className="flex justify-end" >
-                      <div className="text-xs">カテゴリ</div><div className="basis-1/4 text-center border-solid border-2 border-teal-500 rounded">{row.category}</div>
+                      <div className="text-xs">カテゴリ</div><div className="basis-1/2 text-center border-solid border-2 border-teal-500 rounded">{row.category}</div>
                     </div>
                     <div className="flex justify-evenly">
                       <div className="basis-1/3 text-center">
-                        <label className="text-xs" htmlFor="crib">ベビーベッド</label><br/>
+                        <label className="text-xs" htmlFor="crib">おむつ交換台</label><br/>
                         <span className="flex justify-center" id="crib"><MdBabyChangingStation />{row.crib}</span>
                       </div>
                       <div className="basis-1/3 text-center">
@@ -171,10 +171,10 @@ export function Blog() {
                       </div>
                     </div>
                     <div className="text-center">
-                      <label className="text-xs" >コメント</label>
+                      <label className="text-xs" >おやこへのやさしさ</label>
                       <div className="flex justify-center">
                         {[...Array(totalStars)].map((_arr, index) => {
-                            return index < row.kindness_rating ?  <RiStarSmileFill  color="orange" /> : <RiStarSmileFill color="grey"/>;
+                            return index < row.kindness_rating ?  <RiStarSmileFill  color="orange" size="2rem" /> : <RiStarSmileFill color="grey" size="2rem" />;
                         })}
                       </div>
                     </div>
