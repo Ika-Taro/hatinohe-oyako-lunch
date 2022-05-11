@@ -28,7 +28,7 @@ function GlobalNav () {
     if (!localStorage.getItem('auth_token')){
         AuthButtons = (
         <>
-            <nav className="flex flex-row-reverse aline-center flex-wrap bg-teal-500">
+            <nav className="flex flex-row-reverse flex-wrap">
                 <Link to="/register">
                     <span className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white m-4 ml-2">会員登録</span>
                 </Link>
@@ -41,11 +41,11 @@ function GlobalNav () {
     } else {
         AuthButtons = (
         <>
-            <nav className="flex flex-row-reverse  flex-wrap bg-teal-500 ">
+            <nav className="flex flex-row-reverse  flex-wrap">
                 <div onClick={logoutSubmit}>
                     <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white m-4 ">ログアウト</button>
                 </div>
-                <Link to="/">
+                <Link to="/blogform">
                     <span className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white my-4 ">投稿</span>
                 </Link>
             </nav>
@@ -54,8 +54,13 @@ function GlobalNav () {
     }
 
     return(
-        <div>
-            {AuthButtons}
+        <div className="grid grid-cols-2 bg-teal-500">
+            <div className="text-2xl text-white col-span-2 sm:col-span-1 m-4">
+                はちのへおやこランチ
+            </div>
+            <div className="col-span-2 sm:col-span-1">
+                {AuthButtons}
+            </div>
         </div>
     )
 }

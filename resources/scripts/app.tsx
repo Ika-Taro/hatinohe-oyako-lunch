@@ -1,7 +1,6 @@
-import  React from 'react';
+import  React, { useState, useEffect } from "react";
 import {Route, Routes} from "react-router-dom";
 import {
-  Home,
   Blog
 } from "./Pages";
 // import BlogEdit from "./BlogEdit"
@@ -36,10 +35,7 @@ export function App() {
   return (
     <>
       <Routes>
-          {/* <Route path="/" element={<GlobalNav />}/> */}
-          {/* <Route path="/" element={<Home />}/> */}
           <Route path="/" element={<Blog />}/>
-          {/* <Route path='/blog/edit/:id' component={BlogEdit} /> */}
           <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login />}/>
       </Routes>
