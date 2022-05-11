@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('shop_name');
-            $table->integer('shop_category');
+            $table->string('shop_category');
             $table->integer('kindness_rating');
-            $table->integer('children_chair');
-            $table->integer('tatami_room');
-            $table->integer('crib');
+            $table->string('children_chair');
+            $table->string('tatami_room');
+            $table->string('crib');
             $table->text('parent_review');
             $table->text('children_review');
             $table->timestamps();

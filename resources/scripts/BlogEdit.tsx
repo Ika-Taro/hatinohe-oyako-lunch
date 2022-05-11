@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import BlogForm from "./BlogForm"
 import axios from "axios";
 
-type Props = {
-  shop_name: string;
-  shop_category: string;
-  kindness_rating: string;
-  children_chair: string;
-  tatami_room: string;
-  crib: string;
-  parent_review: string;
-  children_review: string;
-  match: any
-}
+// type Props = {
+//   shop_name: string;
+//   shop_category: string;
+//   kindness_rating: string;
+//   children_chair: string;
+//   tatami_room: string;
+//   crib: string;
+//   parent_review: string;
+//   children_review: string;
+//   match: any
+// }
 
 const BlogEdit = (props: any) => {
   const params = props.match.params;
