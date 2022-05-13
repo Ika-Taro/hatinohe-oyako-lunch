@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Http\Requests\API\BlogRequest;
 
 class BlogController extends Controller
 {
@@ -17,6 +18,7 @@ class BlogController extends Controller
     public function create(Request $request)
     {
         $post = new Blog;
+        $post->user_id = $request->userId();
         $post->shop_name = $request->shop_name;
         $post->shop_category = $request->shop_category;
         $post->kindness_rating = $request->kindness_rating;
