@@ -1,2 +1,2 @@
 release: php artisan migrate --force
-web: vender/bin/heroku-php-apache2 src/views/
+web: vender/bin/heroku-php-apache2 resources/views/
