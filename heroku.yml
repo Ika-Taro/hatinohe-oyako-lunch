@@ -1,0 +1,5 @@
+build:
+  docker:
+    web: Dockerfile
+run:
+  web: vender/bin/heroku-php-apache2 public/
