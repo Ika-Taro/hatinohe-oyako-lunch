@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "vite --host",
         "build": "vite build",
-        "heroku-postbuild": "npm run build",
+        "heroku-postbuild": "npm run production",
         "start": "serve -s build",
         "serve": "vite preview"
     },
