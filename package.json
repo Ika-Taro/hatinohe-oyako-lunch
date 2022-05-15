@@ -2,11 +2,10 @@
     "private": true,
     "scripts": {
         "dev": "vite --host",
-        "build": "vite build",
+        "build": "tsc && vite build",
         "heroku-postbuild": "npm run build",
         "start": "serve -s build",
         "serve": "vite preview"
-
     },
     "devDependencies": {
         "@types/react": "^18.0.8",
@@ -27,6 +26,7 @@
         "react-router": "^6.3.0",
         "react-router-dom": "^6.3.0",
         "react-widgets": "^5.8.4",
+        "serve": "^13.0.2",
         "sweetalert": "^2.1.2",
         "tw-elements": "^1.0.0-alpha12"
     }
