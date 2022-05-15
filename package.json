@@ -3,7 +3,10 @@
     "scripts": {
         "dev": "vite --host",
         "build": "vite build",
-        "heroku-postbuild": "npm run production"
+        "heroku-postbuild": "npm run build",
+        "start": "serve -s build",
+        "serve": "vite preview"
+
     },
     "devDependencies": {
         "@types/react": "^18.0.8",
