@@ -1,2 +1,2 @@
 release: php artisan migrate --force
-web: npm start
+web: vender/bin/heroku-php-apache2 public/
