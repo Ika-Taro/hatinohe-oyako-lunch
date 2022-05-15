@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite --host",
-        "build": "tsc && vite build",
+        "build": "vite build",
         "heroku-postbuild": "npm run build",
         "start": "serve -s build",
         "serve": "vite preview"
