@@ -1,8 +1,8 @@
 import React from 'react';
 import "react-widgets/styles.css";
 
-function BlogFrom (props: { data: any; inputChange: any; btnFunc: any; btnReset: any }) {
-  const { data, inputChange, btnFunc, btnReset} = props;
+function BlogFrom (props: { data: any; inputChange: any; btnFunc: any; }) {
+  const { data, inputChange, btnFunc} = props;
   return (
     <>
       <form>
