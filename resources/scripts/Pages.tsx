@@ -57,42 +57,12 @@ export function Blog() {
         return {...formData, [name]: target.value };
       });
     }
-
-  //   const inputChange = (e: { target: { name: [string, number], value: [string, number] ; }; }) => {
-  //     const key = e.target.name;
-  //     const value = e.target.value;
-  //     formData[key] = value;
-  //     let data = Object.assign({}, formData);
-  //     setFormData(data);
-  // }
   
-  const clearAllInputValue = () => {
-    setFormData({
-      shop_name: '', 
-      shop_category:'',
-      kindness_rating:'',
-      children_chair:'',
-      tatami_room:'',
-      crib:'',
-      parent_review:'',
-      children_review:''
-      });
-  };
 
   const createBlogs: any  = () => {
     axios
         .post('/api/blogs/create' 
           ,formData)
-        // ,{
-        //     shop_name: formData.shop_name,
-        //     shop_category: formData.shop_category,
-        //     kindness_rating: formData.kindness_rating,
-        //     children_chair: formData.children_chair,
-        //     tatami_room: formData.tatami_room,
-        //     crib: formData.crib,
-        //     parent_review: formData.parent_review,
-        //     children_review: formData.children_review
-        // })
         .then((res) => {
             const tempPosts: any= blogs;
             tempPosts.push(res.data);
@@ -112,11 +82,6 @@ export function Blog() {
         .post('/api/delete', {
         id: post.id
     })
-    // .then((res) => {
-    //     this.setState({
-    //         posts: res.posts
-    //     });  
-    // })
     .then(response => {
       console.log(response.data);
     })
@@ -137,7 +102,6 @@ export function Blog() {
         crib: post.crib,
         parent_review: post.parent_review,
         children_review: post.children_review,
-        // editBtn: <a key={post.id} href={`/blog/edit/${post.id}`}>編集</a>,
         deleteBtn: <a href="/" onClick={() => deletePost(post)}>削除</a>,
       })
   )
@@ -187,7 +151,7 @@ export function Blog() {
                 data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body relative p-4">
-              <BlogForm data={formData} btnFunc={createBlogs} btnReset={clearAllInputValue} inputChange={inputChange} />  
+              <BlogForm data={formData} btnFunc={createBlogs} inputChange={inputChange} />  
             </div>
           </div>
         </div>

@@ -3,12 +3,6 @@ import swal from "sweetalert";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-// type Longin = {
-//     email: string;
-//     password: string;
-//     error_list: any;
-// }
-
 const Login = () =>{
 
     const navigate = useNavigate();
