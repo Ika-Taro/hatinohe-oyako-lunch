@@ -1,5 +1,0 @@
-build:
-  docker:
-    web: docker/8.1/Dockerfile
-run:
-  web: vender/bin/heroku-php-apache2 public/
